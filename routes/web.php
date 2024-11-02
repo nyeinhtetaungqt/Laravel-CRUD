@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PizzaController;
 use App\Http\Controllers\BottleController;
+use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 
@@ -42,3 +43,10 @@ Route::post('/bottle', [BottleController::class, 'store'])->name('bottle.store')
 Route::get('/bottle/{bottle}/edit', [BottleController::class, 'edit'])->name('bottle.edit');
 Route::put('/bottle/{bottle}/update', [BottleController::class, 'update'])->name('bottle.update');
 Route::delete('/bottle/{bottle}/delete', [BottleController::class, 'delete'])->name('bottle.delete');
+
+Route::get('/people', [PersonController::class, 'index'])->name('person.index');
+Route::get('/people/create', [PersonController::class, 'create'])->name('person.create');
+Route::post('/people', [PersonController::class, 'store'])->name('person.store');
+Route::get('/people/{people}/edit', [PersonController::class, 'edit'])->name('person.edit');
+Route::put('/people/{people}/update', [PersonController::class, 'update'])->name('person.update');
+Route::delete('/people/{people}/destroy', [PersonController::class, 'destroy'])->name('person.destroy');

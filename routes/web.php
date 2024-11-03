@@ -6,8 +6,7 @@ use App\Http\Controllers\BottleController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
-
-
+use App\Http\Controllers\TeacherController;
 
 Route::get('/', function () {
     return "HELLO!";
@@ -50,3 +49,11 @@ Route::post('/people', [PersonController::class, 'store'])->name('person.store')
 Route::get('/people/{people}/edit', [PersonController::class, 'edit'])->name('person.edit');
 Route::put('/people/{people}/update', [PersonController::class, 'update'])->name('person.update');
 Route::delete('/people/{people}/destroy', [PersonController::class, 'destroy'])->name('person.destroy');
+
+
+Route::get('/teachers', [TeacherController::class, 'index'])->name('teacher.index');
+Route::get('/teachers/create', [TeacherController::class, 'create'])->name('teacher.create');
+Route::post('/teachers/store', [TeacherController::class, 'store'])->name('teacher.store');
+Route::get('/teachers/{teachers}/edit', [TeacherController::class, 'edit'])->name('teacher.edit');
+Route::put('/teachers/{teachers}/update', [TeacherController::class, 'update'])->name('teacher.update');
+Route::delete('/teachers/{teachers}/delete', [TeacherController::class, 'delete'])->name('teacher.delete');
